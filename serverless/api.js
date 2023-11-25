@@ -13,8 +13,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 router.get('/pug', (req, res) => {
-    // res.send(pug.renderFile(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
-    res.render(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' })
+    res.send(pug.renderFile(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
+    // res.render(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' })
 })
 
 router.get("/hello", (req, res) => res.send("Hello world"))
