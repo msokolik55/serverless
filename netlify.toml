@@ -1,5 +1,6 @@
 [build]
     functions = "serverless/"
+    publish = "views/"
 
 [functions]
     external_node_modules = ["express"]
