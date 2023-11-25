@@ -18,6 +18,8 @@
 	},
 	"homepage": "https://github.com/msokolik55/serverless#readme",
 	"dependencies": {
-		"node-fetch": "^2.6.1"
+		"express": "^4.18.2",
+		"node-fetch": "^2.6.1",
+		"serverless-http": "^3.2.0"
 	}
 }
