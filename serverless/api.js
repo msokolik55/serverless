@@ -14,12 +14,12 @@ app.set('view engine', 'pug')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// app.use(express.static("views"))
+app.use(express.static("views"))
 
 router.get('/', (req, res) => {
     // res.send(pug.render("h1= title", { title: "hello" }))
-    console.log(process.cwd())
-    res.send(pug.renderFile(path.join(__dirname, "..", "dist", "views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
+    // console.log(process.cwd())
+    res.send(pug.renderFile(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
     // res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
 
