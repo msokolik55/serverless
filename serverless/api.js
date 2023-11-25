@@ -19,10 +19,10 @@ router.get('/pug', (req, res) => {
     // fs.readdirSync(".").forEach(file => {
     //     console.log(file);
     // })
-    console.log(req)
-    res.send(pug.renderFile(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
+    // console.log(req)
+    // res.send(pug.renderFile(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
 
-    // res.render('index', { title: 'Hey', message: 'Hello there!' })
+    res.render("h1= title", { title: "hello" })
 })
 
 router.get("/hello", (req, res) => res.send("Hello world"))
