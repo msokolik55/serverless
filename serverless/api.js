@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // app.use(express.static("views"))
 
 router.get('/', (req, res) => {
-    res.send(pug.render("h1= title"))
+    res.send(pug.render("h1= title", { title: "hello" }))
     // res.send(pug.renderFile("index", { title: 'Hey', message: 'Hello there!' }))
     // res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
