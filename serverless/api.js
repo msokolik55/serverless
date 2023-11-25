@@ -8,26 +8,25 @@ const fs = require("fs")
 const app = express()
 const router = express.Router()
 
-app.engine("pug", pug.__express)
-// app.set('views', path.join(__dirname, 'views'))
+// app.engine("pug", pug.__express)
 app.set('view engine', 'pug')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(express.static("views"))
-
-router.get('/', (req, res) => {
+router.get('/pug', (req, res) => {
     // res.send(pug.render("h1= title", { title: "hello" }))
-    fs.readdirSync(__dirname).forEach(file => {
-        console.log(file);
-    })
+    // fs.readdirSync(".").forEach(file => {
+    //     console.log(file);
+    // })
+    console.log(req)
     res.send(pug.renderFile(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
+
     // res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
 
 router.get("/hello", (req, res) => res.send("Hello world"))
 
-app.use("/.netlify/functions/api/", router)
+app.use("/", router)
 
 exports.handler = serverless(app)
