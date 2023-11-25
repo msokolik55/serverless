@@ -15,7 +15,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 router.get('/', (req, res) => {
-    console.log(pug.renderFile("views/index.pug", { title: 'Hey', message: 'Hello there!' }))
+    console.log(__dirname)
+    // res.send(pug.renderFile(, { title: 'Hey', message: 'Hello there!' }))
     // res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
 
