@@ -15,7 +15,6 @@ api.use(bodyParser.urlencoded({ extended: true }));
 router.get("/", (req, res) => {
 	res.send(
 		pug.renderFile(path.join("views", "index.pug"), {
-			title: "Hey",
 			message: "Hello there!",
 		})
 	);
