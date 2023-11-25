@@ -8,14 +8,14 @@ const app = express()
 const router = express.Router()
 
 app.engine("pug", pug.__express)
-app.set('views', path.join(__dirname, 'views'))
+// app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 router.get('/', (req, res) => {
-    console.log(pug.render("h1 Hello world"))
+    // res.send(pug.render("h1 Hello world"))
     // res.send(pug.renderFile(, { title: 'Hey', message: 'Hello there!' }))
     res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
