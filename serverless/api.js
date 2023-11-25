@@ -14,7 +14,7 @@ app.set('view engine', 'pug')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(express.static("views"))
+// app.use(express.static("views"))
 
 router.get('/', (req, res) => {
     // res.send(pug.render("h1 Hello world"))
