@@ -3,6 +3,7 @@ const serverless = require("serverless-http")
 const path = require("path")
 const bodyParser = require("body-parser")
 const pug = require("pug")
+const fs = require("fs")
 
 const app = express()
 const router = express.Router()
@@ -18,7 +19,9 @@ app.use(express.static("views"))
 
 router.get('/', (req, res) => {
     // res.send(pug.render("h1= title", { title: "hello" }))
-    console.log(__dirname)
+    fs.readdirSync(__dirname).forEach(file => {
+        console.log(file);
+    })
     res.send(pug.renderFile(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
     // res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
