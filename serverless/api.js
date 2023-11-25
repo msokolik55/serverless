@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 router.get('/', (req, res) => {
     // res.send(pug.render("h1= title", { title: "hello" }))
+    console.log(process.cwd())
     res.send(pug.renderFile(path.join(__dirname, "..", "dist", "views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
     // res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
