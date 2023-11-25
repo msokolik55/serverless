@@ -1,6 +1,5 @@
 [build]
-    publish = "dist/"
-
+    command = "npm install pug-cli; node node_modules/pug-cli/index.js pug/ --out ./public"
     functions = "serverless/"
 
 [functions]
