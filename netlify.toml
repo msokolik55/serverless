@@ -2,4 +2,4 @@
     functions = "serverless/"
 
 [functions]
-    external_node_modules = ["express"]
+    external_node_modules = ["express", "pug"]
