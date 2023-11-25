@@ -27,6 +27,6 @@ router.get('/pug', (req, res) => {
 
 router.get("/hello", (req, res) => res.send("Hello world"))
 
-app.use("/", router)
+app.use("/.netlify/functions/api", router)
 
 exports.handler = serverless(app)
