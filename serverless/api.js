@@ -1,9 +1,11 @@
 const express = require("express")
 const serverless = require("serverless-http")
+const path = require("path")
 
 const api = express()
 const router = express.Router()
 
+api.set('views', path.join(__dirname, 'views'))
 api.set('view engine', 'pug')
 
 router.get('/', (req, res) => {
