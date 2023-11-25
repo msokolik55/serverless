@@ -4,3 +4,4 @@
 
 [functions]
     external_node_modules = ["express"]
+    included_files = ["views/**"]

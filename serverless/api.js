@@ -16,10 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 router.get('/pug', (req, res) => {
     // res.send(pug.render("h1= title", { title: "hello" }))
-    fs.readdirSync("https://genuine-custard-417475.netlify.app/").forEach(file => {
+    fs.readdirSync(__dirname).forEach(file => {
         console.log(file);
     })
-    // console.log(req)
+    console.log(pug.renderFile(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
     // res.send(pug.renderFile(path.join("views", "index.pug"), { title: 'Hey', message: 'Hello there!' }))
 
     // res.render('index', { title: 'Hey', message: 'Hello there!' })
