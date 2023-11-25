@@ -17,9 +17,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // app.use(express.static("views"))
 
 router.get('/', (req, res) => {
-    // res.send(pug.render("h1 Hello world"))
+    res.send(pug.render("h1 Hello world"))
     // res.send(pug.renderFile("index", { title: 'Hey', message: 'Hello there!' }))
-    res.render('index', { title: 'Hey', message: 'Hello there!' })
+    // res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
 
 router.get("/hello", (req, res) => res.send("Hello world"))
