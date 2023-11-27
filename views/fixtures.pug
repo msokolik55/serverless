@@ -1,0 +1,32 @@
+doctype 5
+html(lang="en")
+  head
+    style(type='text/css').
+        img {
+            width: 150px;
+        }
+
+        .logo {
+          text-align: center;
+        }
+
+        .team-name {
+          text-align: center;
+        }
+  body
+    table
+      each item in response
+        tr
+          td.logo
+            img(src=item.teams.home.logo)
+          td= item.goals.home
+          td :
+          td= item.goals.away
+          td.logo
+            img(src=item.teams.away.logo)
+        tr
+          td.team-name= item.teams.home.name
+          td
+          td :
+          td
+          td.team-name= item.teams.away.name

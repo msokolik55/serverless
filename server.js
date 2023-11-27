@@ -3,6 +3,8 @@ const pug = require("pug");
 const bodyParser = require("body-parser");
 const path = require("path");
 
+const fixtures = require("./db/fixtures.json")
+
 const PORT = process.env.PORT || 3000;
 
 const app = express();
@@ -14,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 router.get("/", (req, res) => {
-	res.send(pug.renderFile(path.join("views", "index.pug"), { message: "hello" }));
+	res.send(pug.renderFile(path.join("views", "fixtures.pug"), { response: fixtures.response }));
 });
 
 app.use("/", router);
